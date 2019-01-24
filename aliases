@@ -1,0 +1,2 @@
+# Use mvim instead of vim for rendering speed
+alias vim="mvim -v"
