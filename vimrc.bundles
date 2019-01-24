@@ -1,0 +1,78 @@
+set nocompatible
+
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#rc()
+
+" Let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" Define bundles via Github repos
+Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-projectionist'
+Bundle 'rking/ag.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'geekjuice/vim-spec'
+Bundle 'tpope/vim-bundler'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-surround'
+Bundle 'tmhedberg/matchit'
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'vim-scripts/tComment'
+Bundle "skwp/greplace.vim"
+Bundle "vim-ruby/vim-ruby"
+Bundle "scrooloose/syntastic"
+Bundle "tpope/vim-haml"
+Bundle "dkprice/vim-easygrep"
+Bundle "tpope/vim-rails"
+Bundle "altercation/vim-colors-solarized"
+Bundle "myusuf3/numbers.vim"
+Bundle 'jgdavey/tslime.vim'
+Bundle 'henrik/vim-qargs'
+Bundle 'pangloss/vim-javascript'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'jsx/jsx.vim'
+Bundle 'terryma/vim-expand-region'
+Bundle 'jiangmiao/auto-pairs'
+Plugin 'rentziass/vim-snippets'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'mattn/emmet-vim'
+Plugin 'fatih/vim-go'
+Plugin 'rizzatti/dash.vim'
+
+
+" Restore cursor position and folding
+Bundle 'vim-scripts/restore_view.vim'
+
+" Theme
+Plugin 'jpo/vim-railscasts-theme'
+" Plugin 'mhartington/oceanic-next'
+Bundle 'ajmwagar/vim-deus'
+
+
+" Vim Rspec
+Bundle "thoughtbot/vim-rspec"
+
+" Vim I18n
+Bundle "rentziass/vim-i18n"
+
+" Vim easy align
+Bundle "junegunn/vim-easy-align"
+
+" Indentation guides
+Bundle "Yggdroot/indentLine"
+
+" Sidebar
+Bundle "scrooloose/nerdtree"
+
+" Colorscheme
+" Plugin 'git@github.com:fugalh/desert.vim.git'
+
+filetype on
