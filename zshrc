@@ -18,7 +18,7 @@ DEFAULT_USER="shan"
 # looking in ~/.oh-my-zsh/themes/
 # An empty array have no effect
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-ZSH_THEME=agnoster
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -115,6 +115,10 @@ alias ozrc="vim ~/.zshrc"
 # runs rails console
 alias rc="bin/rails c"
 
+#run react native ios and android simulators
+alias rnri="react-native run-ios"
+alias rnra="react-native run-android"
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
@@ -152,3 +156,4 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"

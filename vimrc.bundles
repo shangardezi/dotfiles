@@ -75,4 +75,7 @@ Bundle "scrooloose/nerdtree"
 " Colorscheme
 " Plugin 'git@github.com:fugalh/desert.vim.git'
 
+" JSX Syntax highlighting
+Plugin 'mxw/vim-jsx'
+
 filetype on
