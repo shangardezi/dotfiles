@@ -112,12 +112,20 @@ alias ovrc="vim ~/.vimrc"
 # open.zshrc in vim
 alias ozrc="vim ~/.zshrc"
 
+alias ovrcb="vim ~/.vimrc.bundles"
+
 # runs rails console
 alias rc="bin/rails c"
+#
+# runs sidekiq
+alias bes="bundle exec sidekiq"
 
 #run react native ios and android simulators
 alias rnri="react-native run-ios"
 alias rnra="react-native run-android"
+
+# Runs rubocop for files that differ from the 'master' branch and autocorrects (with -a flag) issues
+alias rfix="git diff-tree -r --no-commit-id --name-only master@\{u\} head | xargs ls -1 2>/dev/null | grep '\.rb$' | xargs rubocop -a --force-exclusion"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
@@ -157,3 +165,6 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin

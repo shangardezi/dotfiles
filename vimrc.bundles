@@ -10,6 +10,7 @@ Bundle 'gmarik/vundle'
 " Define bundles via Github repos
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rhubarb'
 Bundle 'tpope/vim-projectionist'
 Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
@@ -46,6 +47,7 @@ Plugin 'Shougo/neosnippet-snippets'
 Plugin 'mattn/emmet-vim'
 Plugin 'fatih/vim-go'
 Plugin 'rizzatti/dash.vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 
 " Restore cursor position and folding
@@ -77,5 +79,16 @@ Bundle "scrooloose/nerdtree"
 
 " JSX Syntax highlighting
 Plugin 'mxw/vim-jsx'
+
+" Deoplete Autocomplete
+Plugin 'shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+
+" Lint Engine
+Plugin 'w0rp/ale'
+
+" Search through all files
+Plugin 'dyng/ctrlsf.vim'
 
 filetype on
