@@ -100,6 +100,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias vim="nvim"
+alias vi="nvim"
+
 #creates a pull request
 alias opr="hub pull-request"
 
@@ -113,6 +116,7 @@ alias ovrc="vim ~/.vimrc"
 alias ozrc="vim ~/.zshrc"
 
 alias ovrcb="vim ~/.vimrc.bundles"
+
 
 # runs rails console
 alias rc="bin/rails c"
@@ -148,6 +152,16 @@ if [ -f '/Users/shan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then sour
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
+klt () {
+    kubectl exec -ti kafka-$(( $RANDOM %5 )) -c broker /opt/kafka/bin/kafka-run-class.sh kafka.tools.GetOffsetShell -- --broker-list localhost:9092 --time -1 $@
+}
+kt () {
+    kubectl exec -ti kafka-$(( $RANDOM %5 )) -c broker /opt/kafka/bin/kafka-topics.sh -- --zookeeper=zetcd:2181/kafka $@
+}
+kg () {
+    kubectl exec -ti kafka-$(( $RANDOM %5 )) -c broker /opt/kafka/bin/kafka-consumer-groups.sh -- --bootstrap-server localhost:9092 $@
+}
+
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
 zle -N edit-command-line
@@ -168,3 +182,4 @@ export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
+export PATH="/usr/local/opt/ruby/bin:$PATH"

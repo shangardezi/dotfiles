@@ -7,9 +7,19 @@
 	name = Shan Gardezi
 	email = shangardezi@gmail.com
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/syedgardezi/.gitignore_global
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[filter "strongbox"]
+	clean = strongbox -clean %f
+	smudge = strongbox -smudge %f
+	required = true
+[diff "strongbox"]
+	textconv = strongbox -diff
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[url "https://"]
+	insteadOf = git://

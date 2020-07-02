@@ -63,7 +63,7 @@ Bundle 'ajmwagar/vim-deus'
 Bundle "thoughtbot/vim-rspec"
 
 " Vim I18n
-Bundle "rentziass/vim-i18n"
+"Bundle "rentziass/vim-i18n"
 
 " Vim easy align
 Bundle "junegunn/vim-easy-align"
@@ -81,9 +81,18 @@ Bundle "scrooloose/nerdtree"
 Plugin 'mxw/vim-jsx'
 
 " Deoplete Autocomplete
-Plugin 'shougo/deoplete.nvim'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
+
+"Denite Search
+if has('nvim')
+  Plugin 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/denite.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
 
 " Lint Engine
 Plugin 'w0rp/ale'

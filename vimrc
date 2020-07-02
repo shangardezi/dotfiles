@@ -41,15 +41,21 @@ let g:rails_projections = {
       \}
 " enable autocomplete
 let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog = 'python3'
+"let g:python3_host_prog = 'python3'
 
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" Gopls
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_fmt_command = 'goimports'
+
+
 " Set specific linters
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'ruby': ['rubocop'],
+\   'go': ['gopls'],
 \}
 
 " Only run linters named in ale_linters settings.
@@ -77,10 +83,10 @@ set shiftwidth=2
 set expandtab
 
 " :Lint to run golint
-set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
+" set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
 
 " Runs lint on :w
-autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+" autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 " Easy split movement using CTRL + letter
 nnoremap <C-j> <C-w>j
