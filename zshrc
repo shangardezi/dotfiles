@@ -109,13 +109,13 @@ alias opr="hub pull-request"
 # runs ngrok e.g ngrok http PORTNUMBER
 alias ngrok="/Applications/ngrok"
 
-# open vimrc in vim
-alias ovrc="vim ~/.vimrc"
+# open vimrc in nvim
+alias ovrc="nvim ~/.vimrc"
 
 # open.zshrc in vim
-alias ozrc="vim ~/.zshrc"
+alias ozrc="nvim ~/.zshrc"
 
-alias ovrcb="vim ~/.vimrc.bundles"
+alias ovrcb="nvim ~/.vimrc.bundles"
 
 
 # runs rails console
@@ -182,4 +182,6 @@ export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
