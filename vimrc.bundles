@@ -81,9 +81,9 @@ Bundle "scrooloose/nerdtree"
 Plugin 'mxw/vim-jsx'
 
 " Deoplete Autocomplete
-if has('nvim')
-  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-endif
+" if has('nvim')
+"   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" endif
 
 "Denite Search
 if has('nvim')
@@ -99,5 +99,8 @@ Plugin 'w0rp/ale'
 
 " Search through all files
 Plugin 'dyng/ctrlsf.vim'
+
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'christoomey/vim-tmux-navigator'
 
 filetype on
