@@ -9,6 +9,9 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
+" Import denite config
+source ~/.denite.vim
+
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup
@@ -27,7 +30,7 @@ endif
 
 " let g:rspec_runner = "os_x_iterm"
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-let g:NERDTreeWinSize=20
+let g:NERDTreeWinSize=31
 " Prefere *_spec.rb rather than *_test.rb with :A
 " let g:rails_projections = {
 "       \  'app/*.rb': {
@@ -75,6 +78,16 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
+let g:go_auto_type_info = 1
+
+" vim-jsx-pretty
+let g:vim_jsx_pretty_highlight_close_tag = 1
+
+" Map keys for most used commands.
+" Ex: `\b` for building, `\r` for running and `\b` for running test.
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
 
 " nnoremap <F6> :w <CR> :GoTestCompile <CR> <CR>
 " inoremap <F6> <ESC> :w <CR> :GoTestCompile <CR> <CR>
@@ -170,12 +183,20 @@ vnoremap // y/<C-R>"<CR>
 map <silent> <Leader>n :NERDTreeToggle<CR>
 
 " \v to find current file in NERDTree
-nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+nnoremap <silent> <Leader>/ :NERDTreeFind<CR>
 
 " remove search highlighting with esc
 nnoremap <esc> :noh<return><esc>
 
-" Denite {{{
+" CloseTag
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_filetypes = 'html,xhtml,phtml,javascript'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+"
+"" Denite {{{
 " Change file_rec command.
 call denite#custom#var('file_rec', 'command',
       \ ['ag', '--follow', '--nocolor', '--nogroup', '--ignore=*.pyc', '-g', ''])

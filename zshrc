@@ -153,15 +153,16 @@ if [ -f '/Users/shan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then sour
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 klt () {
-    kubectl exec -ti kafka-$(( $RANDOM %5 )) -c broker /opt/kafka/bin/kafka-run-class.sh kafka.tools.GetOffsetShell -- --broker-list localhost:9092 --time -1 $@
+    kubectl exec -ti kafka-$(( $RANDOM %5 )) -c broker -- /opt/kafka/bin/kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9092 --time -1 $@
 }
 kt () {
-    kubectl exec -ti kafka-$(( $RANDOM %5 )) -c broker /opt/kafka/bin/kafka-topics.sh -- --zookeeper=zetcd:2181/kafka $@
+    kubectl exec -ti kafka-$(( $RANDOM %5 )) -c broker -- /opt/kafka/bin/kafka-topics.sh --zookeeper=zetcd:2181/kafka $@
 }
 kg () {
-    kubectl exec -ti kafka-$(( $RANDOM %5 )) -c broker /opt/kafka/bin/kafka-consumer-groups.sh -- --bootstrap-server localhost:9092 $@
+    kubectl exec -ti kafka-$(( $RANDOM %5 )) -c broker -- /opt/kafka/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 $@
 }
 
+export GH_EDITOR=nvim
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
 zle -N edit-command-line
@@ -185,3 +186,4 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+source /Users/shan/Projects/openpilot/tools/openpilot_env.sh
