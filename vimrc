@@ -191,47 +191,8 @@ nnoremap <esc> :noh<return><esc>
 " CloseTag
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.tsx'
 let g:closetag_filetypes = 'html,xhtml,phtml,javascript'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
-
-"
-"" Denite {{{
-" Change file_rec command.
-call denite#custom#var('file_rec', 'command',
-      \ ['ag', '--follow', '--nocolor', '--nogroup', '--ignore=*.pyc', '-g', ''])
-"
-"Change mappings.
-call denite#custom#map(
-      \ 'insert',
-      \ 'K',
-      \ '<denite:move_to_next_line>',
-      \ 'noremap'
-      \)
-call denite#custom#map(
-      \ 'insert',
-      \ 'L',
-      \ '<denite:move_to_previous_line>',
-      \ 'noremap'
-      \)
-"
-" Change sorters.
-call denite#custom#source(
-      \ 'file_rec', 'sorters', ['sorter_sublime'])
-"
-" Change default prompt
-call denite#custom#option('default', 'prompt', '_')
-"
-" Change ignore_globs
-call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
-      \ [ '.git/', '.ropeproject/', '__pycache__/*', '*.pyc',
-      \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/', '*.png'])
-
-nnoremap <space>v :Denite file_rec -default-action=vsplit<cr>
-nnoremap <space>s :Denite file_rec -default-action=split<cr>
-nnoremap <space>e :Denite file_rec -winheight=10 <cr>
-nnoremap <space>m :Denite file_mru -winheight=10 -vertical-preview -auto-preview <cr>
-nnoremap <space>l :Denite line -auto-preview<cr>
-" }}}
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,tsx'
 
 colorscheme railscasts

@@ -9,6 +9,5 @@ Session.vim
 .netrwhist
 *~
 # auto-generated tag files
-tags
 *.rdb
 .idea/
