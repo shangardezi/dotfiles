@@ -70,6 +70,8 @@ plugins=(git zsh-autosuggestions)
 eval "$(rbenv init -)"
 
 source $ZSH/oh-my-zsh.sh
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1
 
 # User configuration
 
@@ -186,4 +188,3 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-source /Users/shan/Projects/openpilot/tools/openpilot_env.sh

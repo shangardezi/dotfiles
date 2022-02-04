@@ -49,6 +49,8 @@ Plugin 'fatih/vim-go'
 Plugin 'rizzatti/dash.vim'
 Plugin 'editorconfig/editorconfig-vim'
 
+" Twig syntax highlighting
+Plugin 'nelsyeung/twig.vim'
 
 " Restore cursor position and folding
 Bundle 'vim-scripts/restore_view.vim'
@@ -73,6 +75,9 @@ Bundle "Yggdroot/indentLine"
 
 " Sidebar
 Bundle "scrooloose/nerdtree"
+" Plugin 'kyazdani42/nvim-web-devicons'
+" Plugin 'ryanoasis/vim-devicons'
+" Plugin 'kyazdani42/nvim-tree.lua'
 
 " Colorscheme
 " Plugin 'git@github.com:fugalh/desert.vim.git'
@@ -100,11 +105,13 @@ endif
 " Search through all files
 Plugin 'dyng/ctrlsf.vim'
 
-Plugin 'neoclide/coc.nvim', {'branch': 'v0.0.80'}
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'christoomey/vim-tmux-navigator'
 
 " Autoclose html, js tags
 Plugin 'alvan/vim-closetag'
+
+" Plugin 'github/copilot.vim'
 
 
 filetype on
